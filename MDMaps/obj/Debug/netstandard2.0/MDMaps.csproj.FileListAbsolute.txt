@@ -1,0 +1,14 @@
+D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\MDMaps.deps.json
+D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\MDMaps.dll
+D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\ref\MDMaps.dll
+D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\MDMaps.pdb
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.AssemblyInfoInputs.cache
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.AssemblyInfo.cs
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.csproj.CoreCompileInputs.cache
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\XamlC.stamp
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.dll
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\ref\MDMaps.dll
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.pdb
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.csprojAssemblyReference.cache

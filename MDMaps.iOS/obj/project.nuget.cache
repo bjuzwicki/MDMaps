@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "pbIL2rKYS/khPdoJB12+HNX8idPmXtEjo2wI+H1eCmARU9CvyIi0ZYqj1MxPNHs7BlFlzj11iKy7279ril2Cwg==",
+  "success": true,
+  "projectFilePath": "D:\\Projekty\\WFA\\MDMaps\\MDMaps.iOS\\MDMaps.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\barte\\.nuget\\packages\\xamarin.forms\\5.0.0.2083\\xamarin.forms.5.0.0.2083.nupkg.sha512",
+    "C:\\Users\\barte\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2083\\xamarin.forms.maps.5.0.0.2083.nupkg.sha512"
+  ],
+  "logs": []
+}
