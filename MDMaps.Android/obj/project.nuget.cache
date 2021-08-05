@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "2wqMTIfSld+0tAauoPmEQfken6PfO38n/zkz4+CCxFPjbKRYsYPRtMtUfpcL8LQ4ZpPN7tTNAJyHlS597h+r0g==",
+  "dgSpecHash": "6OH6qFp+L3GVPBtlxu3hUOijxwnPurRoXk9rw7q4r2RgAXb+NhWcXqeUMp+3fIQkW/mSy7Sm/EjzpOqAYBJh6Q==",
   "success": true,
   "projectFilePath": "D:\\Projekty\\WFA\\MDMaps\\MDMaps.Android\\MDMaps.Android.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\barte\\.nuget\\packages\\system.net.http\\4.3.4\\system.net.http.4.3.4.nupkg.sha512",
+    "C:\\Users\\barte\\.nuget\\packages\\xam.plugin.connectivity\\3.2.0\\xam.plugin.connectivity.3.2.0.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\xamarin.androidx.activity\\1.2.0.1\\xamarin.androidx.activity.1.2.0.1.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\xamarin.androidx.annotation\\1.1.0.9\\xamarin.androidx.annotation.1.1.0.9.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\xamarin.androidx.annotation.experimental\\1.0.0.9\\xamarin.androidx.annotation.experimental.1.0.0.9.nupkg.sha512",
@@ -53,7 +55,7 @@
     "C:\\Users\\barte\\.nuget\\packages\\xamarin.androidx.viewpager\\1.0.0.7\\xamarin.androidx.viewpager.1.0.0.7.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\xamarin.androidx.viewpager2\\1.0.0.8\\xamarin.androidx.viewpager2.1.0.0.8.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\xamarin.build.download\\0.10.0\\xamarin.build.download.0.10.0.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\barte\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\xamarin.forms\\5.0.0.2083\\xamarin.forms.5.0.0.2083.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2083\\xamarin.forms.maps.5.0.0.2083.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\xamarin.google.android.material\\1.2.1.1\\xamarin.google.android.material.1.2.1.1.nupkg.sha512",

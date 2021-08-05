@@ -8,13 +8,19 @@ using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Essentials;
 using System.Threading;
+using MDMaps.Network;
+using System.Resources;
+using System.IO;
+using System.Reflection;
 
 namespace MDMaps
 {
     public partial class MainPage : ContentPage
     {
+        public static string json;
         public MainPage()
         {
+            
             var location = Geolocation.GetLastKnownLocationAsync();
             //map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(locator.Result.Latitude, locator.Result.Longitude), Distance.FromMiles(1)));
             MainMap map = new MainMap(MapSpan.FromCenterAndRadius(new Position(location.Result.Latitude, location.Result.Longitude), Distance.FromMeters(100)))
@@ -38,21 +44,16 @@ namespace MDMaps
                 //CornerRadius = 15,
                 //BorderColor=Color.Transparent,
                 //BackgroundColor=Color.Transparent,
-                Opacity = 1
+                Opacity = 1,
             };
+
+            button.Clicked += ButtonClicked;
 
             var relativeLayout = new RelativeLayout()
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
-
-            Func<RelativeLayout, double> getfloatingLabelHeight = (p) => map.Measure(p.Width, p.Height).Request.Height;
-            Func<RelativeLayout, double> getfloatingLabelWidth = (p) => map.Measure(p.Width, p.Height).Request.Width;
-
-            Func<RelativeLayout, double> getCircleImageHeight = (p) => button.Measure(p.Width, p.Height).Request.Height;
-            Func<RelativeLayout, double> getCircleImageWidth = (p) => button.Measure(p.Width, p.Height).Request.Width;
-
 
             relativeLayout.Children.Add(map,
                 Constraint.RelativeToParent(parent => parent.X),
@@ -66,10 +67,41 @@ namespace MDMaps
                 Constraint.RelativeToView(map, (parent, view) => view.Y + 60)
             );
            
+            GetJSON("https://maps.googleapis.com/maps/api/directions/json?origin=51.12583072392185,16.969331794391568&destination=51.130109572828744,16.96647782321775&key=");
+
+            //Resources.GetString(Resource.String.MyString);
             Content = relativeLayout;
             InitializeComponent();
         }
 
+        public async void GetJSON(string url)  
+        {   
+            if (NetworkCheck.IsInternet())  
+            {  
+                string key = GetKey();
+                var client = new System.Net.Http.HttpClient();  
+                var response = await client.GetAsync(url + key);  
+                json = await response.Content.ReadAsStringAsync(); 
+            }  
+        }  
+
+        public void ButtonClicked(object sender, EventArgs args)
+        {
+            Console.WriteLine("json: " + json);
+        }
+
+
+        public string GetKey()
+        {
+            Assembly assem = this.GetType().Assembly;
+            using (Stream stream = assem.GetManifestResourceStream("MDMaps.Network.key.txt"))
+            {
+                using (var reader = new StreamReader(stream))
+                {
+                    return reader.ReadToEnd();
+                }
+            }
+        }
         //CancellationTokenSource cts;
 
         //async Task<Location> GetCurrentLocation()

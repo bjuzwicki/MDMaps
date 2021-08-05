@@ -18048,16 +18048,16 @@ namespace MDMaps.Droid
 			public const int fallback_menu_item_share_link = 2131623999;
 			
 			// aapt resource value: 0x7F0E0040
-			public const int google_maps_key = 2131624000;
+			public const int hide_bottom_view_on_scroll_behavior = 2131624000;
 			
 			// aapt resource value: 0x7F0E0041
-			public const int hide_bottom_view_on_scroll_behavior = 2131624001;
+			public const int icon_content_description = 2131624001;
 			
 			// aapt resource value: 0x7F0E0042
-			public const int icon_content_description = 2131624002;
+			public const int item_view_role_description = 2131624002;
 			
 			// aapt resource value: 0x7F0E0043
-			public const int item_view_role_description = 2131624003;
+			public const int key = 2131624003;
 			
 			// aapt resource value: 0x7F0E0044
 			public const int material_slider_range_end = 2131624004;

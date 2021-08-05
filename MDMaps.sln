@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDMaps.Android", "MDMaps.An
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDMaps.iOS", "MDMaps.iOS\MDMaps.iOS.csproj", "{9196D325-7F12-4B32-B242-22C2A46CF535}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDMaps", "MDMaps\MDMaps.csproj", "{3756B710-39FF-4AA4-BA9E-5E1D2E4A589E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDMaps", "MDMaps\MDMaps.csproj", "{3756B710-39FF-4AA4-BA9E-5E1D2E4A589E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

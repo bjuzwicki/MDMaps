@@ -1317,7 +1317,7 @@ public final class R {
 		public static final int character_counter_pattern = 0x7f0e0021;
 		public static final int fab_transformation_scrim_behavior = 0x7f0e003b;
 		public static final int fab_transformation_sheet_behavior = 0x7f0e003c;
-		public static final int hide_bottom_view_on_scroll_behavior = 0x7f0e0041;
+		public static final int hide_bottom_view_on_scroll_behavior = 0x7f0e0040;
 		public static final int mtrl_chip_close_icon_content_description = 0x7f0e0047;
 		public static final int nav_app_bar_navigate_up_description = 0x7f0e0069;
 		public static final int nav_app_bar_open_drawer_description = 0x7f0e006a;

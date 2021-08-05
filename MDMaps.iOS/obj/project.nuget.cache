@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "pbIL2rKYS/khPdoJB12+HNX8idPmXtEjo2wI+H1eCmARU9CvyIi0ZYqj1MxPNHs7BlFlzj11iKy7279ril2Cwg==",
+  "dgSpecHash": "cY7zaKEumHIFhgGDQgRCfV1wc1UIrljC17xRkHA0G4EM6qPl7bCh7is1QfgHY9RTl2PnikXvZm9oDJ/khiTXog==",
   "success": true,
   "projectFilePath": "D:\\Projekty\\WFA\\MDMaps\\MDMaps.iOS\\MDMaps.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\barte\\.nuget\\packages\\system.net.http\\4.3.4\\system.net.http.4.3.4.nupkg.sha512",
+    "C:\\Users\\barte\\.nuget\\packages\\xam.plugin.connectivity\\3.2.0\\xam.plugin.connectivity.3.2.0.nupkg.sha512",
+    "C:\\Users\\barte\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\xamarin.forms\\5.0.0.2083\\xamarin.forms.5.0.0.2083.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2083\\xamarin.forms.maps.5.0.0.2083.nupkg.sha512"
   ],

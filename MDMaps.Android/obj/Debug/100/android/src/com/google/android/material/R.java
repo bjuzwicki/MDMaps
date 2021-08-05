@@ -1834,9 +1834,9 @@ public final class R {
 		public static final int exposed_dropdown_menu_content_description = 0x7f0e003a;
 		public static final int fab_transformation_scrim_behavior = 0x7f0e003b;
 		public static final int fab_transformation_sheet_behavior = 0x7f0e003c;
-		public static final int hide_bottom_view_on_scroll_behavior = 0x7f0e0041;
-		public static final int icon_content_description = 0x7f0e0042;
-		public static final int item_view_role_description = 0x7f0e0043;
+		public static final int hide_bottom_view_on_scroll_behavior = 0x7f0e0040;
+		public static final int icon_content_description = 0x7f0e0041;
+		public static final int item_view_role_description = 0x7f0e0042;
 		public static final int material_slider_range_end = 0x7f0e0044;
 		public static final int material_slider_range_start = 0x7f0e0045;
 		public static final int mtrl_badge_numberless_content_description = 0x7f0e0046;
