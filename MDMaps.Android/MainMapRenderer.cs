@@ -29,7 +29,6 @@ namespace MDMaps.Droid
         protected override void OnMapReady(GoogleMap map)
         {
             base.OnMapReady(map);
-            //map.UiSettings.ScrollGesturesEnabledDuringRotateOrZoom = true;
             map.UiSettings.ZoomGesturesEnabled = true;
             map.UiSettings.RotateGesturesEnabled = true;
             map.UiSettings.ScrollGesturesEnabled = true;

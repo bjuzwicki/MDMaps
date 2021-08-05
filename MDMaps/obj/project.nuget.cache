@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "2bk3oy4J02AFra3nUkgraiidpe/QcKKt+Ps+bXK8OU0Xl24pYT+t2KT0AHllckt9LDDfx2dycvSjWyI70NBIIg==",
+  "dgSpecHash": "yfhzIEz2xI+EfpgReCbefGbuMaRNSVNAuaVp7UTRXfGQAyY7en8wBXtcxqPsV51X2JaD0aWGPiywflx0dBEVAQ==",
   "success": true,
   "projectFilePath": "D:\\Projekty\\WFA\\MDMaps\\MDMaps\\MDMaps.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\barte\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\barte\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",

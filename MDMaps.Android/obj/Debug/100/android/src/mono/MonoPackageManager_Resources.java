@@ -5,6 +5,7 @@ public class MonoPackageManager_Resources {
 		"MDMaps.Android.dll",
 		"FormsViewGroup.dll",
 		"MDMaps.dll",
+		"Newtonsoft.Json.dll",
 		"Plugin.Connectivity.Abstractions.dll",
 		"Plugin.Connectivity.dll",
 		"Xamarin.AndroidX.Activity.dll",

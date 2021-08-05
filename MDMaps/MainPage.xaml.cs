@@ -17,13 +17,12 @@ namespace MDMaps
 {
     public partial class MainPage : ContentPage
     {
-        public static string json;
         public MainPage()
         {
             
             var location = Geolocation.GetLastKnownLocationAsync();
             //map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(locator.Result.Latitude, locator.Result.Longitude), Distance.FromMiles(1)));
-            MainMap map = new MainMap(MapSpan.FromCenterAndRadius(new Position(location.Result.Latitude, location.Result.Longitude), Distance.FromMeters(100)))
+            MainMap map = new MainMap(MapSpan.FromCenterAndRadius(new Position(location.Result.Latitude, location.Result.Longitude), Xamarin.Forms.Maps.Distance.FromMeters(100)))
             {
                 IsShowingUser = true,
                 MoveToLastRegionOnLayoutChange = true,  
@@ -34,8 +33,6 @@ namespace MDMaps
             Position position1 = new Position(51.12583072392185, 16.969331794391568);
             Position position2 = new Position(51.130109572828744, 16.96647782321775);
             
-            Distance distance = Distance.BetweenPositions(position1,position2);
-
             var button = new Button
             {
                 Text = "TEST",
@@ -67,41 +64,32 @@ namespace MDMaps
                 Constraint.RelativeToView(map, (parent, view) => view.Y + 60)
             );
            
-            GetJSON("https://maps.googleapis.com/maps/api/directions/json?origin=51.12583072392185,16.969331794391568&destination=51.130109572828744,16.96647782321775&key=");
+            //GetJSON("https://maps.googleapis.com/maps/api/directions/json?origin=51.12583072392185,16.969331794391568&destination=51.09766773030684,17.048971956165826&key=");
 
 
             Content = relativeLayout;
             InitializeComponent();
         }
 
-        public async void GetJSON(string url)  
-        {   
-            if (NetworkCheck.IsInternet())  
-            {  
-                string key = Key.GetKey();
-                var client = new System.Net.Http.HttpClient();  
-                var response = await client.GetAsync(url + key);  
-                json = await response.Content.ReadAsStringAsync(); 
-            }  
-        }  
+        //public async void GetJSON(string url)  
+        //{   
+        //    if (NetworkCheck.IsInternet())  
+        //    {  
+        //        string key = Key.GetKey();
+        //        var client = new System.Net.Http.HttpClient();  
+        //        var response = await client.GetAsync(url + key);  
+        //        json = await response.Content.ReadAsStringAsync(); 
+        //    }  
+        //}  
 
         public void ButtonClicked(object sender, EventArgs args)
         {
-            Console.WriteLine("json: " + json);
+            
+            DirectionAPI directionAPI = new DirectionAPI();
+            directionAPI.GetDirection("https://maps.googleapis.com/maps/api/directions/json?origin=51.12583072392185,16.969331794391568&destination=51.09766773030684,17.048971956165826&key=");
+            Console.WriteLine("chyba koniec");
         }
 
-
-        //public string GetKey()
-        //{
-        //    Assembly assem = this.GetType().Assembly;
-        //    using (Stream stream = assem.GetManifestResourceStream("MDMaps.Network.key.txt"))
-        //    {
-        //        using (var reader = new StreamReader(stream))
-        //        {
-        //            return reader.ReadToEnd();
-        //        }
-        //    }
-        //}
         //CancellationTokenSource cts;
 
         //async Task<Location> GetCurrentLocation()

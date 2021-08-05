@@ -678,3 +678,4 @@ D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\100\lp\91\jl\files.cache
 D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\100\lp\92\jl\files.cache
 D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\100\lp\101\jl\files.cache
 D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\100\res\values\key.xml
+D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\100\android\assets\Newtonsoft.Json.dll
