@@ -69,7 +69,7 @@ namespace MDMaps
            
             GetJSON("https://maps.googleapis.com/maps/api/directions/json?origin=51.12583072392185,16.969331794391568&destination=51.130109572828744,16.96647782321775&key=");
 
-            //Resources.GetString(Resource.String.MyString);
+
             Content = relativeLayout;
             InitializeComponent();
         }
@@ -78,7 +78,7 @@ namespace MDMaps
         {   
             if (NetworkCheck.IsInternet())  
             {  
-                string key = GetKey();
+                string key = Key.GetKey();
                 var client = new System.Net.Http.HttpClient();  
                 var response = await client.GetAsync(url + key);  
                 json = await response.Content.ReadAsStringAsync(); 
@@ -91,17 +91,17 @@ namespace MDMaps
         }
 
 
-        public string GetKey()
-        {
-            Assembly assem = this.GetType().Assembly;
-            using (Stream stream = assem.GetManifestResourceStream("MDMaps.Network.key.txt"))
-            {
-                using (var reader = new StreamReader(stream))
-                {
-                    return reader.ReadToEnd();
-                }
-            }
-        }
+        //public string GetKey()
+        //{
+        //    Assembly assem = this.GetType().Assembly;
+        //    using (Stream stream = assem.GetManifestResourceStream("MDMaps.Network.key.txt"))
+        //    {
+        //        using (var reader = new StreamReader(stream))
+        //        {
+        //            return reader.ReadToEnd();
+        //        }
+        //    }
+        //}
         //CancellationTokenSource cts;
 
         //async Task<Location> GetCurrentLocation()
