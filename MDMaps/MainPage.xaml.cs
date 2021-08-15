@@ -17,21 +17,19 @@ namespace MDMaps
 {
     public partial class MainPage : ContentPage
     {
-        public MainPage()
+        MainMap map = new MainMap()
         {
-            
-            var location = Geolocation.GetLastKnownLocationAsync();
-            //map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(locator.Result.Latitude, locator.Result.Longitude), Distance.FromMiles(1)));
-            MainMap map = new MainMap(MapSpan.FromCenterAndRadius(new Position(location.Result.Latitude, location.Result.Longitude), Xamarin.Forms.Maps.Distance.FromMeters(100)))
-            {
-                IsShowingUser = true,
-                MoveToLastRegionOnLayoutChange = true,  
-                MapType = MapType.Hybrid, 
-                HasZoomEnabled = false,
-            };
+            IsShowingUser = true,
+            MoveToLastRegionOnLayoutChange = true,  
+        };
 
-            Position position1 = new Position(51.12583072392185, 16.969331794391568);
-            Position position2 = new Position(51.130109572828744, 16.96647782321775);
+        public MainPage()
+        {  
+            var location = Geolocation.GetLastKnownLocationAsync();
+            map.MoveToRegion((MapSpan.FromCenterAndRadius(new Position(location.Result.Latitude, location.Result.Longitude), Xamarin.Forms.Maps.Distance.FromMeters(100))));
+
+            //Position position1 = new Position(51.12583072392185, 16.969331794391568);
+            //Position position2 = new Position(51.130109572828744, 16.96647782321775);
             
             var button = new Button
             {
@@ -64,9 +62,6 @@ namespace MDMaps
                 Constraint.RelativeToView(map, (parent, view) => view.Y + 60)
             );
            
-            //GetJSON("https://maps.googleapis.com/maps/api/directions/json?origin=51.12583072392185,16.969331794391568&destination=51.09766773030684,17.048971956165826&key=");
-
-
             Content = relativeLayout;
             InitializeComponent();
         }
@@ -82,12 +77,28 @@ namespace MDMaps
         //    }  
         //}  
 
-        public void ButtonClicked(object sender, EventArgs args)
-        {
-            
+        public async void ButtonClicked(object sender, EventArgs args)
+        {     
             DirectionAPI directionAPI = new DirectionAPI();
-            directionAPI.GetDirection("https://maps.googleapis.com/maps/api/directions/json?origin=51.12583072392185,16.969331794391568&destination=51.09766773030684,17.048971956165826&key=");
-            Console.WriteLine("chyba koniec");
+
+            Xamarin.Forms.Maps.Polyline polyline = new Xamarin.Forms.Maps.Polyline
+            {
+                StrokeColor = Color.Red,
+                StrokeWidth = 40
+            };
+
+            List<Position> positions = await directionAPI.GetPolylinePoints("https://maps.googleapis.com/maps/api/directions/json?origin=51.12583072392185,16.969331794391568&destination=51.09766773030684,17.048971956165826&key=");
+            
+            foreach(var position in positions)
+            {
+                polyline.Geopath.Add(position);    
+            }
+
+            map.MapElements.Add(polyline);
+
+            //map.MoveToRegion(Camera)
+
+            Console.WriteLine("chyba koniec");           
         }
 
         //CancellationTokenSource cts;

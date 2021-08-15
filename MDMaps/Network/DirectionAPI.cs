@@ -1,45 +1,116 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Forms.Maps;
 
 namespace MDMaps.Network
 {
     public class DirectionAPI
-    {
-        private string Json {get;set;}
-        private Root root {get;set;}
-        
-        public async void GetDirection(string url)  
+    {     
+        public async Task<List<Position>> GetPolylinePoints(string url)
+        {
+            return DecodePolyline(GetRoot(await GetJson(url)).routes[0].overview_polyline.points);
+        }
+
+        private List<Position> DecodePolyline(string encodedPoints) 
+        { 
+            if (string.IsNullOrWhiteSpace(encodedPoints)) 
+            { 
+                return null; 
+            }
+
+            int index = 0;
+            var polylineChars = encodedPoints.ToCharArray();
+            var poly = new List<Position>();
+            int currentLat = 0;
+            int currentLng = 0;
+            int next5Bits;
+
+            while (index < polylineChars.Length)
+            {
+                // calculate next latitude
+                int sum = 0;
+                int shifter = 0;
+
+                do
+                {
+                    next5Bits = polylineChars[index++] - 63;
+                    sum |= (next5Bits & 31) << shifter;
+                    shifter += 5;
+                }
+                while (next5Bits >= 32 && index < polylineChars.Length);
+
+                if (index >= polylineChars.Length)
+                {
+                    break;
+                }
+
+                currentLat += (sum & 1) == 1 ? ~(sum >> 1) : (sum >> 1);
+
+                // calculate next longitude
+                sum = 0;
+                shifter = 0;
+
+                do
+                {
+                    next5Bits = polylineChars[index++] - 63;
+                    sum |= (next5Bits & 31) << shifter;
+                    shifter += 5;
+                }
+                while (next5Bits >= 32 && index < polylineChars.Length);
+
+                if (index >= polylineChars.Length && next5Bits >= 32)
+                {
+                    break;
+                }
+
+                currentLng += (sum & 1) == 1 ? ~(sum >> 1) : (sum >> 1);
+
+                var mLatLng = new Position(Convert.ToDouble(currentLat) / 100000.0, Convert.ToDouble(currentLng) / 100000.0);
+                poly.Add(mLatLng);
+            }
+
+            return poly;
+        }
+
+        public Root GetRoot(string json)  
+        {   
+            if (json != "")  
+            {  
+                //Converting JSON Array Objects into generic list  
+                return JsonConvert.DeserializeObject<Root>(json);
+            }
+
+            return null;
+        }
+        public async Task<string> GetJson(string url)  
         {   
             if (NetworkCheck.IsInternet())  
             {  
                 string key = Key.GetKey();
                 var client = new System.Net.Http.HttpClient();  
                 var response = await client.GetAsync(url + key);
-                Json = await response.Content.ReadAsStringAsync(); 
- 
-                if (Json != "")  
-                {  
-                    //Converting JSON Array Objects into generic list  
-                    root = JsonConvert.DeserializeObject<Root>(Json);
-                    xd();
-                }  
-            }  
-        }   
-        
-        public void xd()
+                return await response.Content.ReadAsStringAsync(); 
+            }
+
+            return "";
+        }
+
+        /*public void xd()
         {
             Console.WriteLine("root XDXD " + root.routes[0].legs[0].distance.value);
 
             Console.WriteLine("root overview_polyline " + root.routes[0].overview_polyline.points);
 
-            foreach(var item in root.geocoded_waypoints)
+            foreach (var item in root.geocoded_waypoints)
             {
                 Console.WriteLine("root XDXD " + item.geocoder_status + ", " + item.place_id);
             }
             //return root;
-        }
+        }*/
     }
 
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
@@ -144,6 +215,4 @@ namespace MDMaps.Network
         public List<Route> routes { get; set; }
         public string status { get; set; }
     }
-
-
 }

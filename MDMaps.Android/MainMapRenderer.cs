@@ -34,6 +34,7 @@ namespace MDMaps.Droid
             map.UiSettings.ScrollGesturesEnabled = true;
             map.UiSettings.MyLocationButtonEnabled = false;
             map.UiSettings.CompassEnabled = true;
+            map.UiSettings.ZoomControlsEnabled = false;
         }
     }
 }

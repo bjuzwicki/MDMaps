@@ -6,7 +6,7 @@ using Xamarin.Forms.Maps;
 namespace MDMaps
 {   public class MainMap : Map
     {
-        public MainMap(MapSpan region) : base(region)
+        public MainMap() : base()
         {
         }
     }
