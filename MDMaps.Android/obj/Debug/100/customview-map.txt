@@ -30,7 +30,6 @@ foreground;obj\Debug\100\res\mipmap-anydpi-v26\icon.xml
 foreground;obj\Debug\100\res\mipmap-anydpi-v26\icon_round.xml
 FrameLayout;D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\100\lp\51\jl\res\layout\bottomtablayout.xml
 item;D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\100\lp\51\jl\res\values\styles.xml
-key;obj\Debug\100\res\values\key.xml
 LinearLayout;D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\100\lp\51\jl\res\layout\bottomtablayout.xml
 paths;D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\100\lp\49\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 resources;D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\100\lp\51\jl\res\values\attrs.xml

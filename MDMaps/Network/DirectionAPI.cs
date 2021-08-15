@@ -31,7 +31,6 @@ namespace MDMaps.Network
 
             while (index < polylineChars.Length)
             {
-                // calculate next latitude
                 int sum = 0;
                 int shifter = 0;
 
@@ -50,7 +49,6 @@ namespace MDMaps.Network
 
                 currentLat += (sum & 1) == 1 ? ~(sum >> 1) : (sum >> 1);
 
-                // calculate next longitude
                 sum = 0;
                 shifter = 0;
 
@@ -79,8 +77,7 @@ namespace MDMaps.Network
         public Root GetRoot(string json)  
         {   
             if (json != "")  
-            {  
-                //Converting JSON Array Objects into generic list  
+            {   
                 return JsonConvert.DeserializeObject<Root>(json);
             }
 
@@ -98,22 +95,8 @@ namespace MDMaps.Network
 
             return "";
         }
-
-        /*public void xd()
-        {
-            Console.WriteLine("root XDXD " + root.routes[0].legs[0].distance.value);
-
-            Console.WriteLine("root overview_polyline " + root.routes[0].overview_polyline.points);
-
-            foreach (var item in root.geocoded_waypoints)
-            {
-                Console.WriteLine("root XDXD " + item.geocoder_status + ", " + item.place_id);
-            }
-            //return root;
-        }*/
     }
 
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
     public class GeocodedWaypoint
     {
         public string geocoder_status { get; set; }
