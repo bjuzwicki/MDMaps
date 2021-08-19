@@ -12,6 +12,7 @@ using MDMaps.Network;
 using System.Resources;
 using System.IO;
 using System.Reflection;
+using System.Globalization;
 
 namespace MDMaps
 {
@@ -21,6 +22,17 @@ namespace MDMaps
         {
             IsShowingUser = true,
             MoveToLastRegionOnLayoutChange = true,  
+        };
+
+        Pin pinStart = new Pin()
+        {
+            Label = "Start",
+            Type = PinType.SavedPin,
+        };
+        Pin pinEnd = new Pin()
+        {
+            Label = "End",
+            Type = PinType.SavedPin,
         };
 
         public MainPage()
@@ -38,6 +50,10 @@ namespace MDMaps
                 //BackgroundColor=Color.Transparent,
                 Opacity = 1,
             };
+
+            pinStart.Position = new Position(51.12583072392185,16.969331794391568);
+
+            pinEnd.Position = new Position(51.09766773030684,17.048971956165826);
 
             button.Clicked += ButtonClicked;
 
@@ -59,6 +75,8 @@ namespace MDMaps
                 Constraint.RelativeToView(map, (parent, view) => view.Y + 60)
             );
            
+            map.Pins.Add(pinStart);
+            map.Pins.Add(pinEnd);
             Content = relativeLayout;
             InitializeComponent();
         }
@@ -73,7 +91,10 @@ namespace MDMaps
                 StrokeWidth = 40
             };
 
-            List<Position> positions = await directionAPI.GetPolylinePoints("https://maps.googleapis.com/maps/api/directions/json?origin=51.12583072392185,16.969331794391568&destination=51.09766773030684,17.048971956165826&key=");
+            NumberFormatInfo nfi = new NumberFormatInfo();
+            nfi.NumberDecimalSeparator = ".";
+
+            List<Position> positions = await directionAPI.GetPolylinePoints($"https://maps.googleapis.com/maps/api/directions/json?origin={pinStart.Position.Latitude.ToString(nfi)},{pinStart.Position.Longitude.ToString(nfi)}&destination={pinEnd.Position.Latitude.ToString(nfi)},{pinEnd.Position.Longitude.ToString(nfi)}&key=");
             
             foreach(var position in positions)
             {
