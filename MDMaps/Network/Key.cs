@@ -12,6 +12,7 @@ namespace MDMaps.Network
         public static string GetKey()
         {
             Assembly assem = typeof(MainPage).Assembly;
+
             using (Stream stream = assem.GetManifestResourceStream("MDMaps.Network.key.txt"))
             {
                 using (var reader = new StreamReader(stream))

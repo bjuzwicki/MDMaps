@@ -11,10 +11,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Graphics\active green pin.png" />
+    <None Remove="Graphics\active red pin.png" />
+    <None Remove="Graphics\green pin.png" />
+    <None Remove="Graphics\red pin.png" />
     <None Remove="Network\key.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Graphics\active green pin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphics\active red pin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphics\green pin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphics\red pin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Network\key.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
