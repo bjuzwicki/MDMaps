@@ -7,6 +7,6 @@ namespace MDMaps.MapElements
     public enum PinDestination
     {
         Start = 0,
-        End = 1
+        End = 1,
     }
 }

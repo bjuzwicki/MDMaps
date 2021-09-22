@@ -8,6 +8,6 @@ namespace MDMaps.MapElements
 {
     class MainPin : Pin
     {
-        public PinDestination Destination { get; set; }
+        public PinDestination Destination {get; set;}
     }
 }

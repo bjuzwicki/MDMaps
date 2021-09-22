@@ -8,13 +8,38 @@ namespace MDMaps.MapElements
     class MainImageButton : ImageButton
     {
         public bool Active { get; set; }
-        public ImageSource ActivateImage {get;set;}
-        public ImageSource DeactivateImage {get;set;}
 
         public void SetActive(bool active)
         {
+            if(active)
+            {
+                BorderColor = Color.Gold;
+            }
+            else
+            {
+                BorderColor = Color.LightGray;
+            }
+
             Active = active;
-            Source = Active ? ActivateImage : DeactivateImage; 
+
+        }
+
+        public void SetEnable(bool enabled)
+        {
+            IsEnabled = enabled;
+
+            if(IsEnabled)
+            {
+                BackgroundColor = Color.WhiteSmoke;
+                Opacity = 1;
+            }
+            else
+            {
+                BackgroundColor = Color.LightGray;
+                Opacity = 0.7;
+                SetActive(IsEnabled);
+            }
+
         }
     }
 }

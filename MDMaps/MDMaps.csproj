@@ -14,7 +14,12 @@
     <None Remove="Graphics\active green pin.png" />
     <None Remove="Graphics\active red pin.png" />
     <None Remove="Graphics\green pin.png" />
+    <None Remove="Graphics\mylocation.png" />
+    <None Remove="Graphics\pins.png" />
     <None Remove="Graphics\red pin.png" />
+    <None Remove="Graphics\route2.png" />
+    <None Remove="Graphics\route3.png" />
+    <None Remove="Graphics\route4.png" />
     <None Remove="Network\key.txt" />
   </ItemGroup>
 
@@ -28,7 +33,22 @@
     <EmbeddedResource Include="Graphics\green pin.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Graphics\mylocation.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Graphics\red pin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphics\pins.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphics\route2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphics\route3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphics\route4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Network\key.txt">

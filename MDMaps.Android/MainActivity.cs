@@ -31,11 +31,9 @@ namespace MDMaps.Droid
             {
                 if ((grantResults.Length == 1) && (grantResults[0] == (int)Permission.Granted))
                 {
-                    // Permissions granted - display a message.
                 }       
                 else
                 {
-                    // Permissions denied - display a message.
                 }         
             }
             else

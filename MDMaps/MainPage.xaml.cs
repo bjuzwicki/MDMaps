@@ -30,59 +30,73 @@ namespace MDMaps
             NumberDecimalSeparator = "."
         };
    
-        MainImageButton addStartPinButton = new MainImageButton
+        MainImageButton createRouteButton = new MainImageButton
         {
-            WidthRequest = 45,
-            HeightRequest = 45,
-            Opacity = 1,
-            BorderWidth = 5,
-            BackgroundColor = Color.Transparent,
-            Active = false,
-            ActivateImage = ImageSource.FromResource("MDMaps.Graphics.active green pin.png"),
-            DeactivateImage = ImageSource.FromResource("MDMaps.Graphics.green pin.png"),
-            Source = ImageSource.FromResource("MDMaps.Graphics.green pin.png"),
+            CornerRadius = 30,
+            BackgroundColor = Color.LightGray,
+            Source = ImageSource.FromResource("MDMaps.Graphics.route4.png"),
+            Opacity = 0.7,       
+            Padding = 10,
+            BorderColor = Color.LightGray,
+            BorderWidth = 2,
+            IsEnabled = false,
         };
-   
-        MainImageButton addEndPinButton = new MainImageButton
+
+        MainImageButton moveToMyLocationButton = new MainImageButton
         {
-            WidthRequest = 45,
-            HeightRequest = 45,
+            CornerRadius = 40,
+            BackgroundColor = Color.WhiteSmoke,          
+            Source = ImageSource.FromResource("MDMaps.Graphics.mylocation.png"),
+            Opacity = 1,       
+            IsVisible = true,
+            Padding = 10,
+            BorderColor = Color.LightGray,
+            BorderWidth = 2,
+        };
+
+        MainImageButton addPinsButton = new MainImageButton
+        {
+            CornerRadius = 30,
             Opacity = 1,
-            BorderWidth = 5,
-            BackgroundColor = Color.Transparent,
+            BorderWidth = 2,
+            BorderColor = Color.LightGray,
+            BackgroundColor = Color.WhiteSmoke,
             Active = false,
-            ActivateImage = ImageSource.FromResource("MDMaps.Graphics.active red pin.png"),
-            DeactivateImage = ImageSource.FromResource("MDMaps.Graphics.red pin.png"),
-            Source = ImageSource.FromResource("MDMaps.Graphics.red pin.png")
+            Padding = 10,
+            Source = ImageSource.FromResource("MDMaps.Graphics.pins.png"),
         };
 
         List<MapElement> tempMapElements = new List<MapElement>();
+
+        public bool routDrawn = false;
 
         public MainPage()
         {  
             InitializeComponent();
 
-            Button createDirectionButton = new Button
-            {
-                Text = "TEST",
-                WidthRequest = 45,
-                HeightRequest = 45,
-                //CornerRadius = 15,
-                //BorderColor=Color.Transparent,
-                //BackgroundColor=Color.Transparent,
-                Opacity = 1,       
-            };
-            
-            createDirectionButton.Clicked += CreateDirectionButtonClicked;
-            addStartPinButton.Clicked += AddStartPinButtonClicked;
-            addEndPinButton.Clicked += AddEndPinButtonClicked;
+            createRouteButton.Clicked += CreateRouteButtonClicked;
+            addPinsButton.Clicked += AddPinsButtonClicked;
+            moveToMyLocationButton.Clicked += MoveToMyLocationButtonClicked;
             map.MapClicked += Map_MapClicked;
 
             var relativeLayout = new RelativeLayout()
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand,            
+                HorizontalOptions = LayoutOptions.FillAndExpand, 
             };
+
+            var relativeLayout2 = new RelativeLayout()
+            {
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+            };
+
+            relativeLayout.Children.Add(relativeLayout2,
+                Constraint.RelativeToView(map, (parent, view) => parent.X + createRouteButton.Width/20),
+                Constraint.RelativeToView(map, (parent, view) => parent.Y + createRouteButton.Height/10),
+                Constraint.RelativeToView(map, (parent, view) => parent.Width - createRouteButton.Width/10),
+                Constraint.RelativeToView(map, (parent, view) => parent.Height/1.3)
+            );
 
             relativeLayout.Children.Add(map,
                 Constraint.RelativeToParent(parent => parent.X),
@@ -91,40 +105,43 @@ namespace MDMaps
                 Constraint.RelativeToParent(parent => parent.Height)
             );
 
-            relativeLayout.Children.Add(createDirectionButton,
-                Constraint.RelativeToView(map, (parent, view) => view.Width - 54),
-                Constraint.RelativeToView(map, (parent, view) => view.Y + 60)
+            relativeLayout.Children.Add(createRouteButton,
+                Constraint.RelativeToView(map, (parent, view) => 0 + createRouteButton.Width/20),
+                Constraint.RelativeToView(map, (parent, view) => parent.Height - createRouteButton.Height - createRouteButton.Height/10),
+                Constraint.RelativeToView(map, (parent, view) => parent.Width - createRouteButton.Width/10),
+                Constraint.RelativeToView(map, (parent, view) => parent.Height/10)
             );
 
-            relativeLayout.Children.Add(addStartPinButton,
-                Constraint.RelativeToView(map, (parent, view) => view.Width - 54),
-                Constraint.RelativeToView(map, (parent, view) => view.Y + 140)
+             relativeLayout.Children.Add(addPinsButton,
+                Constraint.RelativeToView(createRouteButton, (parent, view) => view.X),
+                Constraint.RelativeToView(createRouteButton, (parent, view) => view.Y - view.Height - addPinsButton.Height/10),
+                Constraint.RelativeToView(createRouteButton, (parent, view) => view.Width),
+                Constraint.RelativeToView(createRouteButton, (parent, view) => view.Height)
             );
 
-            relativeLayout.Children.Add(addEndPinButton,
-                Constraint.RelativeToView(map, (parent, view) => view.Width - 54),
-                Constraint.RelativeToView(map, (parent, view) => view.Y + 220)
+            relativeLayout.Children.Add(moveToMyLocationButton,
+                Constraint.RelativeToView(relativeLayout2, (parent, view) => view.Width - moveToMyLocationButton.Width/2),
+                Constraint.RelativeToView(relativeLayout2, (parent, view) => view.Height - moveToMyLocationButton.Height),
+                Constraint.RelativeToView(relativeLayout2, (parent, view) => parent.Height/20),
+                Constraint.RelativeToView(relativeLayout2, (parent, view) => parent.Height/20)
             );
 
             Content = relativeLayout;
-
             
-            map.MoveToRegion((MapSpan.FromCenterAndRadius(GetMyLocation().Result,Xamarin.Forms.Maps.Distance.FromMeters(1000))));
+            try
+            {
+                map.MoveToRegion(MapSpan.FromCenterAndRadius(GetMyLocation().Result,Xamarin.Forms.Maps.Distance.FromMeters(1000)));
+            }
+            catch
+            {
+                DisplayAlert("","Turn Location Services and GPS on!", "Ok");
+                map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(51.759445,19.457216),Xamarin.Forms.Maps.Distance.FromKilometers(1000)));
+            }            
         }
 
-        public async void CreateDirectionButtonClicked(object sender, EventArgs args)
+        public async void CreateRouteButtonClicked(object sender, EventArgs args)
         {     
-            if(tempMapElements.Count > 0)
-            {
-                if(IsMyLocationInEndPoint())
-                {
-                    await DisplayAlert ("Alert", "LETS GO", "OK");
-                }
-                
-                map.MapElements.Clear();
-                tempMapElements.Clear();
-            }
-            else if(map.Pins.Count == 2)
+            if(map.Pins.Count == 2 && !routDrawn)
             {
                 DirectionAPI directionAPI = new DirectionAPI();
 
@@ -154,56 +171,82 @@ namespace MDMaps
 
                 map.MapElements.Add(circle);
 
+                routDrawn = true;
+
+                addPinsButton.SetEnable(false);
+
+                createRouteButton.SetEnable(false);
+
                 tempMapElements = new List<MapElement>(map.MapElements);
+
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+                {
+                    if(tempMapElements.Count == 0)
+                    {
+                        return false;
+                    }
+
+                    if(IsMyLocationInEndPoint())
+                    {
+                        DisplayAlert ("You did it!", "End point has been reached.", "Ok");
+                        routDrawn = false;
+                        map.MapElements.Clear();
+                        tempMapElements.Clear();
+                        map.Pins.Clear();
+                        addPinsButton.SetEnable(true);
+                        return false;
+                    }
+                    
+                    return true;
+                });
             }
         }
 
-        public void AddStartPinButtonClicked(object sender, EventArgs args)
+        public void AddPinsButtonClicked(object sender, EventArgs args)
         {     
-            if(addEndPinButton.Active)
-            {
-                addEndPinButton.SetActive(false);
-            }  
-            
-            addStartPinButton.SetActive(!addStartPinButton.Active);
+            addPinsButton.SetActive(!addPinsButton.Active);
         }
 
-        public void AddEndPinButtonClicked(object sender, EventArgs args)
-        {    
-            if(addStartPinButton.Active)
-            {
-                addStartPinButton.SetActive(false);
-            }  
-            
-            addEndPinButton.SetActive(!addEndPinButton.Active);
+        public void MoveToMyLocationButtonClicked(object sender, EventArgs args)
+        {     
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(GetMyLocation().Result,Xamarin.Forms.Maps.Distance.FromMeters(1000)));
         }
 
         private void Map_MapClicked(object sender, MapClickedEventArgs e)
-        {   
-            PinControler pinControler = new PinControler();  
-            
-            if(addStartPinButton.Active)
-            {
-                 pinControler.CreatePin(PinDestination.Start,e.Position);
-            }
-            else if(addEndPinButton.Active)
-            {
-                 pinControler.CreatePin(PinDestination.End,e.Position);
+        {
+            if (addPinsButton.Active && map.Pins.Count < 2)
+            {   
+                PinControler pinControler = new PinControler();
+                MainPin pin = pinControler.CreatePin(e.Position);   
+
+                pin.MarkerClicked += (s, args) =>
+                {
+                    createRouteButton.SetEnable(false);
+                    if(routDrawn)
+                    {
+                        map.MapElements.Clear();
+                        tempMapElements.Clear();
+                        routDrawn = false;
+                    }
+                    addPinsButton.SetEnable(true);
+                };
+
+                if(routDrawn)
+                {
+                    map.MapElements.Clear();
+                    tempMapElements.Clear();
+                    routDrawn = false;
+                }
+
+                createRouteButton.SetEnable(map.Pins.Count == 2);
+                addPinsButton.SetEnable(map.Pins.Count != 2);
             }
         }
 
         private async Task<Position> GetMyLocation()
         {
-            //var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
-           // CancellationTokenSource cts = new CancellationTokenSource();
-        //var location = await Geolocation.GetLocationAsync(request, cts.Token);
-       // if (location != null)
-       // {
-            //await DisplayAlert ("Alert", "You have been alerted", "OK");
-        //}
-            var location = await Geolocation.GetLastKnownLocationAsync();
-            //var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
-           // var location = await Geolocation.GetLocationAsync(request);
+            Location location = await Geolocation.GetLastKnownLocationAsync();
+
             return new Position(location.Latitude, location.Longitude);
         }
 
@@ -211,25 +254,20 @@ namespace MDMaps
         {
             Circle circle = (Circle)map.MapElements.FirstOrDefault(x => x.GetType() == typeof(Circle));
 
-            Position myPosition = GetMyLocation().Result;
+            Position myPosition = new Position();
+
+            try
+            {
+                myPosition = GetMyLocation().Result;
+            }
+            catch
+            {
+                return false;
+            }
 
             double distance = Location.CalculateDistance(new Location(myPosition.Latitude,myPosition.Longitude),new Location(circle.Center.Latitude,circle.Center.Longitude),DistanceUnits.Kilometers);
 
-            return distance < circle.Radius.Kilometers;     
-
-            //double latitude = Math.Pow(myPosition.Latitude-circle.Center.Latitude,2);
-
-            //double longitude = Math.Pow(myPosition.Longitude-circle.Center.Longitude,2);
-
-            //double radius = circle.Radius.Meters;
-
-            //if(Math.Pow(myPosition.Latitude-circle.Center.Latitude,2) - Math.Pow(myPosition.Longitude-circle.Center.Longitude,2) < Math.Pow(circle.Radius.Meters,2))
-            //{
-            //    DisplayAlert ("Alert", "latitude = " + latitude + ", longitude = " + longitude + ", radius = " + circle.Radius.Meters, "OK");
-            //    return true;
-            //}
-
-            //return false;
+            return distance < circle.Radius.Kilometers;
         }
     }
 }

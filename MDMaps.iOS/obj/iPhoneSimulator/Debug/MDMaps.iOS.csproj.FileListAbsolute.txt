@@ -65,3 +65,7 @@ D:\Projekty\WFA\MDMaps\MDMaps.iOS\obj\iPhoneSimulator\Debug\MDMaps.iOS.csproj.Co
 D:\Projekty\WFA\MDMaps\MDMaps.iOS\obj\iPhoneSimulator\Debug\MDMaps.iOS.csproj.CopyComplete
 D:\Projekty\WFA\MDMaps\MDMaps.iOS\obj\iPhoneSimulator\Debug\MDMaps.iOS.exe
 D:\Projekty\WFA\MDMaps\MDMaps.iOS\obj\iPhoneSimulator\Debug\MDMaps.iOS.pdb
+D:\Projekty\WFA\MDMaps\MDMaps.iOS\bin\iPhoneSimulator\Debug\Graphics\active green pin.png
+D:\Projekty\WFA\MDMaps\MDMaps.iOS\bin\iPhoneSimulator\Debug\Graphics\active red pin.png
+D:\Projekty\WFA\MDMaps\MDMaps.iOS\bin\iPhoneSimulator\Debug\Graphics\green pin.png
+D:\Projekty\WFA\MDMaps\MDMaps.iOS\bin\iPhoneSimulator\Debug\Graphics\red pin.png

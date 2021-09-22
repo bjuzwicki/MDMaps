@@ -1,18 +1,3 @@
-D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\MDMaps.deps.json
-D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\MDMaps.dll
-D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\ref\MDMaps.dll
-D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\MDMaps.pdb
-D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\App.xaml.g.cs
-D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
-D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.AssemblyInfoInputs.cache
-D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.AssemblyInfo.cs
-D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.dll
-D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\ref\MDMaps.dll
-D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.pdb
-D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.csproj.CoreCompileInputs.cache
-D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\XamlC.stamp
-D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\Network\key.txt
-D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.csproj.AssemblyReference.cache
 D:\Projekty\WFA\MDMaps-pins\MDMaps-pins\MDMaps\obj\Debug\netstandard2.0\MDMaps.csprojAssemblyReference.cache
 D:\Projekty\WFA\MDMaps-pins\MDMaps-pins\MDMaps\obj\Debug\netstandard2.0\App.xaml.g.cs
 D:\Projekty\WFA\MDMaps-pins\MDMaps-pins\MDMaps\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
@@ -35,4 +20,24 @@ D:\Projekty\WFA\MDMaps-pins\MDMaps-pins\MDMaps\bin\Debug\netstandard2.0\Graphics
 D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\Graphics\active green pin.png
 D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\Graphics\active red pin.png
 D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\Graphics\green pin.png
+D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\Graphics\mylocation.png
 D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\Graphics\red pin.png
+D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\Graphics\pins.png
+D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\Graphics\route2.png
+D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\Graphics\route3.png
+D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\Graphics\route4.png
+D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\Network\key.txt
+D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\MDMaps.deps.json
+D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\MDMaps.dll
+D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\ref\MDMaps.dll
+D:\Projekty\WFA\MDMaps\MDMaps\bin\Debug\netstandard2.0\MDMaps.pdb
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.AssemblyInfoInputs.cache
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.AssemblyInfo.cs
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.csproj.CoreCompileInputs.cache
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\XamlC.stamp
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.dll
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\ref\MDMaps.dll
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.pdb
+D:\Projekty\WFA\MDMaps\MDMaps\obj\Debug\netstandard2.0\MDMaps.csproj.AssemblyReference.cache

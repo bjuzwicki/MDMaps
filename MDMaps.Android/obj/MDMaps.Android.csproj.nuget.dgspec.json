@@ -25,7 +25,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "monoandroid10.0"
+          "monoandroid11.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -33,7 +33,7 @@
           "https://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin": {}
         },
         "frameworks": {
-          "monoandroid10.0": {
+          "monoandroid11.0": {
             "projectReferences": {
               "D:\\Projekty\\WFA\\MDMaps\\MDMaps\\MDMaps.csproj": {
                 "projectPath": "D:\\Projekty\\WFA\\MDMaps\\MDMaps\\MDMaps.csproj"
@@ -43,7 +43,7 @@
         }
       },
       "frameworks": {
-        "monoandroid10.0": {
+        "monoandroid11.0": {
           "dependencies": {
             "Xamarin.Essentials": {
               "target": "Package",
