@@ -23,8 +23,6 @@ com.google.android.material.tabs.TabLayout;D:\Projekty\WFA\MDMaps\MDMaps.Android
 com.google.android.material.tabs.TabLayout;D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\lp\59\jl\res\layout\rootlayout.xml
 com.google.android.material.tabs.TabLayout;D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\lp\59\jl\res\layout\tabbar.xml
 com.google.android.material.tabs.TabLayout;obj\Debug\110\res\layout\tabbar.xml
-crc643f46942d9dd1fff9.ShellFlyoutLayout;D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\lp\59\jl\res\layout\flyoutcontent.xml
-crc64720bb2db43a66fe9.FormsViewPager;D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\lp\59\jl\res\layout\rootlayout.xml
 declare-styleable;D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\lp\59\jl\res\values\attrs.xml
 external-cache-path;D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\lp\57\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\lp\57\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml

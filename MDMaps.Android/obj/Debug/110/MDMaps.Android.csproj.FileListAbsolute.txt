@@ -280,13 +280,7 @@ D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\android\assets\Xamarin.Googl
 D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\android\assets\Xamarin.GooglePlayServices.Maps.pdb
 D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\android\assets\Xamarin.GooglePlayServices.Tasks.dll
 D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\android\assets\Xamarin.GooglePlayServices.Tasks.pdb
-D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\androidx\jl\3ee32658-5717-4300-b3c8-9f8f405734c3.jar
 D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\stamp\_AndroidXJetifyJavaLibraryRules.stamp
-D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\androidx\proguard\108a2ac8-ad74-4a94-b60f-ecf4d2b0ab96.txt
-D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\androidx\proguard\8250b575-5a16-4c57-97b8-5559c038888a.txt
-D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\androidx\proguard\bb8b7f27-4d89-4713-b859-2fa7d2eddbf8.cfg
-D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\androidx\proguard\da2cbb02-bc46-464f-a326-2f56908ac490.txt
-D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\androidx\proguard\ea3dae1b-fe34-435e-a053-de7ef149610d.txt
 D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\stamp\_AndroidXJetifyProguardRules.stamp
 D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\androidx\_AndroidXJetifyProguardRules.jetify
 D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\stamp\_AndroidXCecilfy.stamp
@@ -735,3 +729,9 @@ D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\stamp\_CopyIntermediateAssem
 D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
+D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\androidx\jl\f5d61174-f7fd-42c0-9ef4-04a3805a4d62.jar
+D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\androidx\proguard\17b3911e-906d-4678-b967-84bae6270c37.txt
+D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\androidx\proguard\503c168c-e7d5-4102-af24-dad1c40ffa40.txt
+D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\androidx\proguard\77ac941b-ee92-4b90-96a1-ddb0cc859523.txt
+D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\androidx\proguard\966d6367-c9e7-4c11-9236-8fdb8f39e4e8.cfg
+D:\Projekty\WFA\MDMaps\MDMaps.Android\obj\Debug\110\androidx\proguard\ea829e53-7d80-44d8-b090-f8ecfd1d48f2.txt
