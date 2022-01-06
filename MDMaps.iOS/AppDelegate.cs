@@ -23,6 +23,7 @@ namespace MDMaps.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            //global::Xamarin.FormsGoogleMaps.Init(options);
             LoadApplication(new App());
             Xamarin.FormsMaps.Init();
 

@@ -45,13 +45,45 @@
       "frameworks": {
         "monoandroid11.0": {
           "dependencies": {
+            "Xamarin.Android.Support.Annotations": {
+              "target": "Package",
+              "version": "[26.0.2, )"
+            },
+            "Xamarin.Android.Support.Compat": {
+              "target": "Package",
+              "version": "[26.0.2, )"
+            },
+            "Xamarin.Android.Support.Core.UI": {
+              "target": "Package",
+              "version": "[26.0.2, )"
+            },
+            "Xamarin.Android.Support.Core.Utils": {
+              "target": "Package",
+              "version": "[26.0.2, )"
+            },
+            "Xamarin.Android.Support.Fragment": {
+              "target": "Package",
+              "version": "[26.0.2, )"
+            },
+            "Xamarin.Android.Support.Media.Compat": {
+              "target": "Package",
+              "version": "[26.0.2, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.5.3.2, )"
+              "version": "[1.7.0, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2083, )"
+              "version": "[5.0.0.2125, )"
+            },
+            "Xamarin.Forms.GoogleMaps": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "Xamarin.GooglePlayServices.Maps": {
+              "target": "Package",
+              "version": "[117.0.1, )"
             }
           }
         }
@@ -118,17 +150,21 @@
               "target": "Package",
               "version": "[3.2.0, )"
             },
+            "Xam.Plugin.Geolocator": {
+              "target": "Package",
+              "version": "[4.5.0.6, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.5.3.2, )"
+              "version": "[1.7.0, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2083, )"
+              "version": "[5.0.0.2125, )"
             },
-            "Xamarin.Forms.Maps": {
+            "Xamarin.Forms.GoogleMaps": {
               "target": "Package",
-              "version": "[5.0.0.2083, )"
+              "version": "[3.3.0, )"
             }
           },
           "imports": [

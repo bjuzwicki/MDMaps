@@ -9,11 +9,11 @@ namespace MDMaps.MapElements
     {
         public bool Active { get; set; }
 
-        public void SetActive(bool active)
+        public void SetActive(bool active, Color color = default(Color))
         {
             if(active)
             {
-                BorderColor = Color.Gold;
+                BorderColor = color;
             }
             else
             {
@@ -21,7 +21,6 @@ namespace MDMaps.MapElements
             }
 
             Active = active;
-
         }
 
         public void SetEnable(bool enabled)
@@ -39,7 +38,6 @@ namespace MDMaps.MapElements
                 Opacity = 0.7;
                 SetActive(IsEnabled);
             }
-
         }
     }
 }

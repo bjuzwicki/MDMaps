@@ -1,39 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Xamarin.Forms.Maps;
 using System.Linq;
+using Xamarin.Forms;
+using Xamarin.Forms.GoogleMaps;
+using Android.Widget;
 
 namespace MDMaps.MapElements
 {
     class PinControler
     {
-        public MainPin CreatePin(Position position)
+        public Pin CreatePin(Position position)
         {
-            MainPin pin = new MainPin()
+            Pin pin = new Pin()
             {
                 Type = PinType.Place,
-                Position = position,
-                Label = "1",
+                Position = position,          
             };
             
-            var existPin = (MainPin)MainPage.map.Pins.FirstOrDefault();
+            var existPin = MainPage.map.Pins.FirstOrDefault();
 
-            pin.Destination = existPin == null ? PinDestination.Start : PinDestination.End; 
+            string label = "1";
 
-            pin.MarkerClicked += (s, args) =>
+            if(existPin != null)
             {
-                args.HideInfoWindow = true;
+                label = existPin.Label == "1" ? "2" : "1";
+            }
+            pin.Label = label;
 
-                MainPage.map.Pins.Remove(pin);
+            Color color = pin.Label == "1" ? Color.Green : Color.Red;
+            pin.Icon = BitmapDescriptorFactory.DefaultMarker(color);
 
-                var existPin2 = (MainPin)MainPage.map.Pins.FirstOrDefault();
-                
-                if(existPin2 != null)
-                {
-                   var updatePin =  (MainPin)MainPage.map.Pins[0];
-                   updatePin.Destination = PinDestination.Start;
-                }
+            MainPage.map.PinClicked += (s, args) =>
+            {
+                MainPage.map.Pins.Remove(args.Pin);
+                Console.WriteLine(pin.Label);
+                Console.WriteLine(args.Pin.Label);
             };
 
             MainPage.map.Pins.Add(pin);
